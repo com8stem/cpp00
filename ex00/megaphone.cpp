@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cctype>
 #include <string>
-// #include <algorithm>
 
 int main(int argc, char **argv)
 {
@@ -14,8 +13,6 @@ int main(int argc, char **argv)
 		for (int i = 1; i < argc; i++)
 		{
 			std::string str = argv[i];
-			// std::transform(str.begin(), str.end(), str.begin(), ::toupper);
-			// std::cout << str;
 			for (size_t j = 0; j < str.size(); j++)
 			{
 				std::cout << (char)std::toupper(str[j]);
