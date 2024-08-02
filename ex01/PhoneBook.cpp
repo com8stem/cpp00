@@ -2,7 +2,7 @@
 
 void PhoneBook::AddContact()
 {
-	Contact newContact;
+	Contact new_contact;
 	std::string input;
 
 	std::cout << "Enter first name: ";
@@ -11,7 +11,7 @@ void PhoneBook::AddContact()
 		std::cerr << "\nInput interrupted. Cancelling contact addition." << std::endl;
 		return;
 	}
-	newContact.set_first_name(input);
+	new_contact.set_first_name(input);
 
 	std::cout << "Enter last name: ";
 	if (!std::getline(std::cin, input) || input.empty())
@@ -19,7 +19,7 @@ void PhoneBook::AddContact()
 		std::cerr << "\nInput interrupted. Cancelling contact addition." << std::endl;
 		return;
 	}
-	newContact.set_last_name(input);
+	new_contact.set_last_name(input);
 
 	std::cout << "Enter nickname: ";
 	if (!std::getline(std::cin, input) || input.empty())
@@ -27,7 +27,7 @@ void PhoneBook::AddContact()
 		std::cerr << "\nInput interrupted. Cancelling contact addition." << std::endl;
 		return;
 	}
-	newContact.set_nickname(input);
+	new_contact.set_nickname(input);
 
 	std::cout << "Enter phone number: ";
 	if (!std::getline(std::cin, input) || input.empty())
@@ -35,7 +35,7 @@ void PhoneBook::AddContact()
 		std::cerr << "\nInput interrupted. Cancelling contact addition." << std::endl;
 		return;
 	}
-	newContact.set_phone_number(input);
+	new_contact.set_phone_number(input);
 
 	std::cout << "Enter darkest secret: ";
 	if (!std::getline(std::cin, input) || input.empty())
@@ -43,13 +43,13 @@ void PhoneBook::AddContact()
 		std::cerr << "\nInput interrupted. Cancelling contact addition." << std::endl;
 		return;
 	}
-	newContact.set_darkest_secret(input);
+	new_contact.set_darkest_secret(input);
 
 	if (contact_count_ < 8)
 	{
 		contact_count_++;
 	}
-	contacts_[current_index_] = newContact;
+	contacts_[current_index_] = new_contact;
 	current_index_ = (current_index_ + 1) % 8;
 }
 
@@ -75,10 +75,9 @@ void PhoneBook::SearchContacts() const
 	for (int i = 0; i < contact_count_; i++)
 	{
 		std::cout << "|" << std::setw(10) << i + 1
-				  << "|" << std::setw(10) << FormatField(contacts_[i].get_first_name())
-				  << "|" << std::setw(10) << FormatField(contacts_[i].get_last_name())
-				  << "|" << std::setw(10) << FormatField(contacts_[i].get_nickname())
-				  << "|\n";
+					<< "|" << std::setw(10) << FormatField(contacts_[i].get_first_name())
+				  	<< "|" << std::setw(10) << FormatField(contacts_[i].get_last_name())
+					<< "|" << std::setw(10) << FormatField(contacts_[i].get_nickname()) << "|\n";
 	}
 
 	int index;
