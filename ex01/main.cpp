@@ -4,23 +4,28 @@ int main(int argc, char **argv)
 {
 	PhoneBook phoneBook;
 	std::string command;
-	(void)argv;
 
-	if (argc != 1)
+	if (argc > 1)
 	{
-		std::cout << "Invalid number of arguments" << std::endl;
+		std::cerr << "Usage: " << argv[0] << std::endl;
 		return 1;
 	}
-	std::cout << "Enter commands :";
-	while (std::getline(std::cin, command))
+	while (true)
 	{
+		std::cout << "Enter a command: ";
+		if (!std::getline(std::cin, command))
+		{
+			std::cout << "\nEOF detected. Exiting the program." << std::endl;
+			break;
+		}
+
 		if (command == "ADD")
 		{
-			phoneBook.addContact();
+			phoneBook.AddContact();
 		}
 		else if (command == "SEARCH")
 		{
-			phoneBook.searchContacts();
+			phoneBook.SearchContacts();
 		}
 		else if (command == "EXIT")
 		{
@@ -28,10 +33,8 @@ int main(int argc, char **argv)
 		}
 		else
 		{
-			std::cout << "Invalid command" << std::endl;
+			std::cout << "Invalid command." << std::endl;
 		}
-		std::cout << "Enter commands :";
 	}
-
 	return 0;
 }
