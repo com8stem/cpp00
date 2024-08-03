@@ -8,40 +8,40 @@ void PhoneBook::AddContact()
 	std::cout << "Enter first name: ";
 	if (!std::getline(std::cin, input) || input.empty())
 	{
-		std::cerr << "\nInput is invalid. Cancelling contact addition." << std::endl;
-		return;
+		std::cerr << "\nInput is invalid. Exiting Phonebook." << std::endl;
+		std::exit(1);
 	}
 	new_contact.set_first_name(input);
 
 	std::cout << "Enter last name: ";
 	if (!std::getline(std::cin, input) || input.empty())
 	{
-		std::cerr << "\nInput is invalid. Cancelling contact addition." << std::endl;
-		return;
+		std::cerr << "\nInput is invalid. Exiting Phonebook." << std::endl;
+		std::exit(1);
 	}
 	new_contact.set_last_name(input);
 
 	std::cout << "Enter nickname: ";
 	if (!std::getline(std::cin, input) || input.empty())
 	{
-		std::cerr << "\nInput is invalid. Cancelling contact addition." << std::endl;
-		return;
+		std::cerr << "\nInput is invalid. Exiting Phonebook." << std::endl;
+		std::exit(1);
 	}
 	new_contact.set_nickname(input);
 
 	std::cout << "Enter phone number: ";
 	if (!std::getline(std::cin, input) || input.empty())
 	{
-		std::cerr << "\nInput is invalid. Cancelling contact addition." << std::endl;
-		return;
+		std::cerr << "\nInput is invalid. Exiting Phonebook." << std::endl;
+		std::exit(1);
 	}
 	new_contact.set_phone_number(input);
 
 	std::cout << "Enter darkest secret: ";
 	if (!std::getline(std::cin, input) || input.empty())
 	{
-		std::cerr << "\nInput is invalid. Cancelling contact addition." << std::endl;
-		return;
+		std::cerr << "\nInput is invalid. Exiting Phonebook." << std::endl;
+		std::exit(1);
 	}
 	new_contact.set_darkest_secret(input);
 
@@ -84,8 +84,8 @@ void PhoneBook::SearchContacts() const
 	std::cout << "Enter the index of the contact to display: ";
 	if (!(std::cin >> index))
 	{
-		std::cerr << "\nInput interrupted." << std::endl;
-		return;
+		std::cerr << "\nInput interrupted. Exiting Phonebook." << std::endl;
+		std::exit(1);
 	}
 	std::cin.ignore();
 	if (index < 1 || index > contact_count_)
