@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Contact.hpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kishizu <kishizu@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/03 18:29:11 by kishizu           #+#    #+#             */
+/*   Updated: 2024/08/03 19:02:43 by kishizu          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef CONTACT_HPP
 #define CONTACT_HPP
 
@@ -13,11 +25,11 @@ private:
 	std::string darkest_secret_;
 
 public:
-	void set_first_name(const std::string &first_name);
-	void set_last_name(const std::string &last_name);
-	void set_nickname(const std::string &nickname);
-	void set_phone_number(const std::string &phone_number);
-	void set_darkest_secret(const std::string &darkest_secret);
+	void set_first_name(const std::string first_name);
+	void set_last_name(const std::string last_name);
+	void set_nickname(const std::string nickname);
+	void set_phone_number(const std::string phone_number);
+	void set_darkest_secret(const std::string darkest_secret);
 
 	std::string get_first_name() const;
 	std::string get_last_name() const;

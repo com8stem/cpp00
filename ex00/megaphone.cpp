@@ -1,4 +1,15 @@
-#include <cctype>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kishizu <kishizu@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/08/03 18:39:09 by kishizu           #+#    #+#             */
+/*   Updated: 2024/08/03 21:35:21 by kishizu          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <string>
 
@@ -16,10 +27,6 @@ int main(int argc, char **argv)
 			for (size_t j = 0; j < str.size(); j++)
 			{
 				std::cout << (char)std::toupper(str[j]);
-			}
-			if (i < argc - 1)
-			{
-				std::cout << " ";
 			}
 		}
 		std::cout << std::endl;
