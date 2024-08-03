@@ -9,7 +9,7 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(NAME) $(OBJS)
 
-$(OBJS):
+$(OBJS): $(SRCS)
 	$(CXX) $(CXXFLAGS) -c $(SRCS)
 
 clean:

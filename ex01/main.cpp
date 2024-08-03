@@ -2,7 +2,7 @@
 
 int main(int argc, char **argv)
 {
-	PhoneBook phoneBook;
+	PhoneBook phone_book;
 	std::string command;
 
 	if (argc > 1)
@@ -16,16 +16,15 @@ int main(int argc, char **argv)
 		if (!std::getline(std::cin, command))
 		{
 			std::cout << "\nEOF detected. Exiting the program." << std::endl;
-			break;
+			return 1;
 		}
-
 		if (command == "ADD")
 		{
-			phoneBook.AddContact();
+			phone_book.AddContact();
 		}
 		else if (command == "SEARCH")
 		{
-			phoneBook.SearchContacts();
+			phone_book.SearchContacts();
 		}
 		else if (command == "EXIT")
 		{
